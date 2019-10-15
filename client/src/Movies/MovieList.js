@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Route, NavLink} from 'react-router-dom';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 
@@ -31,9 +31,9 @@ const MovieList = props => {
 
 function MovieDetails({ movie }) {
   return (
-    <Link to={`/movies/${movie.id}`}>
+    <NavLink to={`/movies/${movie.id}`}>
       <MovieCard movie={movie} />
-    </Link>
+    </NavLink>
   );
 }
 

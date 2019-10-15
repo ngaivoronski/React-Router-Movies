@@ -13,12 +13,13 @@ const Movie = (props) => {
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           setMovie(response.data);
+          console.log("rerender");
         })
         .catch(error => {
           console.error(error);
         });
 
-  },[]);
+  },[props.match.params.movieID]);
   
   // Uncomment this only when you have moved on to the stretch goals
   const saveMovie = () => {
@@ -31,7 +32,6 @@ const Movie = (props) => {
   }
 
   const { title, director, metascore, stars } = movie;
-  console.log(props);
 
   return (
     <div className="save-wrapper">
